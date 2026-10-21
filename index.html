@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive Software Engineering seminar guide to six software architectural styles.">
+  <title>Architectural Styles | Software Engineering Seminar</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="Architectural Styles home">
+        <span class="brand-mark">A<span>/</span>S</span>
+        <span class="brand-copy"><strong>ARCH / STYLES</strong><small>SOFTWARE ENGINEERING</small></span>
+      </a>
+      <div class="side-label">SEMINAR NAVIGATION</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#home"><span>⌂</span> Overview</a>
+        <a class="nav-link" href="#styles"><span>◈</span> Explore styles</a>
+        <a class="nav-link" href="#compare"><span>⇄</span> Compare styles</a>
+        <a class="nav-link" href="#quiz"><span>✳</span> Quick revision</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="status-dot"></div>
+        <div><strong>LEARNING MODE</strong><small>6 architecture patterns</small></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumb">SEMINAR <span>/</span> <b>ARCHITECTURAL STYLES</b></div>
+        <a class="top-chip" href="#quiz"><span class="live-dot"></span> Interactive guide</a>
+      </header>
+
+      <section class="hero section-anchor" id="home">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> SOFTWARE ENGINEERING / CHAPTER 10</div>
+          <h1>Architecture is<br>the <span>blueprint</span><br>of software.</h1>
+          <p class="hero-description">Explore how software systems are organized, how their components communicate, and how familiar applications use different architectural styles.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#styles">Explore the styles <span>↗</span></a>
+            <a class="button button-quiet" href="#compare">Compare patterns</a>
+          </div>
+          <div class="hero-meta"><span class="meta-icon">⌘</span> 6 styles <i></i> Interactive diagrams <i></i> Real-world examples</div>
+        </div>
+        <div class="hero-visual" aria-label="Illustration of connected software components">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="node node-core"><span>◈</span><b>SOFTWARE</b><small>ARCHITECTURE</small></div>
+          <div class="node node-a"><span>▤</span><small>DATA</small></div>
+          <div class="node node-b"><span>⌘</span><small>LOGIC</small></div>
+          <div class="node node-c"><span>◉</span><small>UI</small></div>
+          <div class="node node-d"><span>↔</span><small>FLOW</small></div>
+          <div class="connector connector-a"></div><div class="connector connector-b"></div>
+          <div class="connector connector-c"></div><div class="connector connector-d"></div>
+          <div class="visual-caption"><span class="status-dot"></span> COMPONENTS • CONNECTORS • RULES</div>
+          <div class="visual-index">FIG. 01 <span>ARCHITECTURE MAP</span></div>
+        </div>
+      </section>
+
+      <section class="intro-strip">
+        <div class="intro-number">01 <span>/ FOUNDATIONS</span></div>
+        <div class="intro-copy"><h2>What is an architectural style?</h2><p>An <strong>architectural style</strong> is a way of organizing the overall structure of a software system. It defines the types of components, how they communicate, and the rules that guide how they fit together.</p></div>
+        <div class="definition-note"><span>KEY IDEA</span><p>A blueprint for the system's overall structure—not just its visual design.</p></div>
+      </section>
+
+      <section class="section-block" id="styles">
+        <div class="section-heading">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span> THE ARCHITECTURE LIBRARY</div><h2>Six styles. Six ways to build.</h2><p>Select a style to explore its structure and working process.</p></div>
+          <div class="section-counter"><strong>06</strong><span>STYLES</span></div>
+        </div>
+        <div class="style-layout">
+          <div class="style-list" id="styleList" role="tablist" aria-label="Architectural styles">
+            <button class="style-tab active" data-style="data-centered" role="tab" aria-selected="true"><span class="tab-number">01</span><span class="tab-copy"><strong>Data-centered</strong><small>Shared repository</small></span><span class="tab-arrow">↗</span></button>
+            <button class="style-tab" data-style="data-flow" role="tab" aria-selected="false"><span class="tab-number">02</span><span class="tab-copy"><strong>Data-flow</strong><small>Pipes and filters</small></span><span class="tab-arrow">↗</span></button>
+            <button class="style-tab" data-style="call-return" role="tab" aria-selected="false"><span class="tab-number">03</span><span class="tab-copy"><strong>Call-and-return</strong><small>Main / subprogram</small></span><span class="tab-arrow">↗</span></button>
+            <button class="style-tab" data-style="object-oriented" role="tab" aria-selected="false"><span class="tab-number">04</span><span class="tab-copy"><strong>Object-oriented</strong><small>Objects and messages</small></span><span class="tab-arrow">↗</span></button>
+            <button class="style-tab" data-style="layered" role="tab" aria-selected="false"><span class="tab-number">05</span><span class="tab-copy"><strong>Layered</strong><small>Organized layers</small></span><span class="tab-arrow">↗</span></button>
+            <button class="style-tab" data-style="mvc" role="tab" aria-selected="false"><span class="tab-number">06</span><span class="tab-copy"><strong>MVC</strong><small>Model · View · Controller</small></span><span class="tab-arrow">↗</span></button>
+          </div>
+          <article class="style-detail" aria-live="polite">
+            <div class="detail-topline"><span class="detail-tag" id="detailTag">STYLE 01</span><span class="detail-category" id="detailCategory">SHARED DATA</span></div>
+            <h3 id="detailTitle">Data-centered architecture</h3>
+            <p class="detail-definition" id="detailDefinition">A central data store is shared by multiple independent components that read, add, update, or delete information.</p>
+            <div class="diagram-panel">
+              <div class="diagram-heading"><div><span class="eyebrow-mini">INTERACTIVE DIAGRAM</span><h4 id="diagramTitle">A shared repository</h4></div><span class="diagram-live"><span class="live-dot"></span> CLICK A COMPONENT</span></div>
+              <div class="diagram-stage" id="diagramStage" aria-label="Interactive architecture diagram"></div>
+              <div class="diagram-explainer"><span class="explain-icon">↳</span><div><strong id="componentTitle">Central repository</strong><p id="componentExplanation">The repository stores shared data so clients can work with a consistent source of information.</p></div></div>
+              <div class="diagram-controls"><button class="small-button" id="prevStep" type="button">← Previous</button><span id="stepCount">STEP 1 / 4</span><button class="small-button small-button-accent" id="nextStep" type="button">Next step →</button></div>
+            </div>
+            <div class="detail-grid">
+              <div class="detail-card"><span class="card-label">HOW IT WORKS</span><ol id="workingSteps"></ol></div>
+              <div class="detail-card"><span class="card-label">REAL-WORLD EXAMPLE</span><h4 id="exampleTitle">College student records</h4><p id="exampleText"></p><div class="example-flow" id="exampleFlow"></div></div>
+            </div>
+            <div class="pros-cons">
+              <div><span class="pros-heading">＋ STRENGTHS</span><p id="prosText"></p></div>
+              <div><span class="cons-heading">− TRADE-OFFS</span><p id="consText"></p></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="comparison-section section-anchor" id="compare">
+        <div class="section-heading">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span> AT A GLANCE</div><h2>Compare the approaches.</h2><p>Different structures solve different kinds of problems.</p></div>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>STYLE</th><th>MAIN IDEA</th><th>COMMUNICATION</th><th>EXAMPLE</th></tr></thead><tbody>
+          <tr><td><span class="table-index">01</span> Data-centered</td><td>Shared central data</td><td>Clients ↔ repository</td><td>Student records</td></tr>
+          <tr><td><span class="table-index">02</span> Data-flow</td><td>Transform data in stages</td><td>Pipes between filters</td><td>Image processing</td></tr>
+          <tr><td><span class="table-index">03</span> Call-and-return</td><td>Hierarchical control</td><td>Calls and returns</td><td>Banking operations</td></tr>
+          <tr><td><span class="table-index">04</span> Object-oriented</td><td>Objects encapsulate data and behavior</td><td>Message passing / method calls</td><td>Online shopping</td></tr>
+          <tr><td><span class="table-index">05</span> Layered</td><td>Separate responsibilities</td><td>Requests across layers</td><td>College management</td></tr>
+          <tr><td><span class="table-index">06</span> MVC</td><td>Separate data, UI, request handling</td><td>Controller coordinates model and view</td><td>Student portal</td></tr>
+        </tbody></table></div>
+        <p class="table-footnote">Note: Real applications often combine more than one architectural style. These examples illustrate a dominant way of organizing the system.</p>
+      </section>
+
+      <section class="quiz-section section-anchor" id="quiz">
+        <div class="quiz-card">
+          <div class="quiz-copy"><div class="eyebrow"><span class="eyebrow-line"></span> CHECK YOUR UNDERSTANDING</div><h2>Ready to explain it?</h2><p>Test your understanding with a few seminar-style questions.</p><div class="quiz-progress"><span id="quizProgressBar"></span></div><small id="quizProgressText">QUESTION 1 OF 5</small></div>
+          <div class="quiz-content" id="quizContent"></div>
+        </div>
+      </section>
+
+      <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">A<span>/</span>S</span><span class="brand-copy"><strong>ARCH / STYLES</strong><small>SOFTWARE ENGINEERING</small></span></a><p>Learn the structure. Understand the flow. Explain the design.</p><a href="#home" class="back-top">BACK TO TOP ↑</a></footer>
+    </main>
+  </div>
+</body>
+</html>
